@@ -21,12 +21,12 @@
 
 #include "usb_resource_creator.h"
 
-#include "resource_manager.h"
+#include "../resource_manager.h"
 
-#include "findlist.h"
+#include "../findlist.h"
 
 #include "util.h"
-#include "exception.h"
+#include "../exception.h"
 
 #include <sstream>
 #include <iomanip>

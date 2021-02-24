@@ -20,7 +20,7 @@
 
 #include "usb_resource.h"
 
-#include "resource_creator.h"
+#include "../resource_creator.h"
 
 #include <libusb.h>
 

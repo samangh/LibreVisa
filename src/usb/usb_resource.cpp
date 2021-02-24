@@ -24,7 +24,7 @@
 
 #include "usb_resource.h"
 
-#include "exception.h"
+#include "../exception.h"
 
 #define MIN(a, b) (((a) < (b)) ? (a) : (b))
 

@@ -19,7 +19,7 @@
 #ifndef librevisa_usb_resource_h_
 #define librevisa_usb_resource_h_ 1
 
-#include "instrument_resource.h"
+#include "../instrument_resource.h"
 
 #include <libusb.h>
 

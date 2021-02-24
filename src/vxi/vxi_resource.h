@@ -18,9 +18,9 @@
 #ifndef librevisa_vxi_resource_h_
 #define librevisa_vxi_resource_h_ 1
 
-#include "instrument_resource.h"
+#include "../instrument_resource.h"
 
-#include "messagepump.h"
+#include "../messagepump.h"
 
 #include <string>
 #include <queue>
