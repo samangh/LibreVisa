@@ -91,7 +91,10 @@ endif()
 ## Targets/Sources
 ##
 
+enable_testing()
+
 add_subdirectory(src)
+add_subdirectory(tests)
 
 
 ##
@@ -103,8 +106,4 @@ foreach(t visa)
   if (USE_STATIC_RUNTIME AND MSVC)
     set_property(TARGET ${t} PROPERTY MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:Debug>")
   endif()
-endforeach()
-
-foreach(t ${TARGETS})
-  target_compile_features(${t} PRIVATE cxx_std_17)
 endforeach()
