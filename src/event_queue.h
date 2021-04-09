@@ -23,7 +23,7 @@
 #include "mutex.h"
 #include "condvar.h"
 #include "lock.h"
-
+#include <time.h>
 #include <stdint.h>
 
 namespace librevisa {
