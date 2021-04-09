@@ -5,25 +5,17 @@ set(TARGET "visa")
 ##
 
 set(SRC_FILES
-	base_vprintf.cpp base_vprintf.h
-	condvar.h condvar_pthread.h condvar_windows.h
-	event.h
-	event_queue.cpp event_queue.h
-	exception.h
-	findlist.cpp findlist.h
-	instrument_resource.h
-	intrusive_list.h
-	lock.h
-	messagepump.cpp messagepump.h
-	mutex.h mutex_pthread.h mutex_windows.h
-	object.cpp object.h
-	object_cache.cpp object_cache.h
-	resource.cpp resource.h
-	resource_creator.h
-	resource_manager.cpp resource_manager.h
-	session.cpp session.h
+	base_vprintf.cpp
+	event_queue.cpp
+	findlist.cpp
+	messagepump.cpp
+	object.cpp
+	object_cache.cpp
+	resource.cpp
+	resource_manager.cpp
+	session.cpp
 	thread.h
-	thread_pthread.cpp thread_pthread.h
+	thread_pthread.cpp
 	timeval_op.h
 	util.h
 	viBufWrite.cpp
