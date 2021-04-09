@@ -22,6 +22,7 @@
 #include <cstring>
 #include <cstdlib>
 #include <cstdio>
+#include <memory>
 
 #include "visa.h"
 #include "object_cache.h"
@@ -270,9 +271,9 @@ ViStatus base_vprintf(ViSession vi, ViPBuf userstring, ViString writeFmt, ViVALi
                                                                 bufsiz = snprintf(0, 0, "%*Lf", (int)fwidth, ldnum);
                                                 }
                                                 else bufsiz = snprintf(0, 0, "%Lf", ldnum);
-                                                char buf[bufsiz];
-                                                snprintf(buf, bufsiz, "%Lf", ldnum);
-                                                for(pnum = buf; *pnum; pnum++) {
+                                                auto buf = std::make_unique<char[]>(bufsiz);
+                                                snprintf(buf.get(), bufsiz, "%Lf", ldnum);
+                                                for(pnum = buf.get(); *pnum; pnum++) {
                                                         ViStatus ret = buf_put(vi, userstring, *pnum);
                                                         if(ret != VI_SUCCESS)
                                                                 return ret;
@@ -287,9 +288,9 @@ ViStatus base_vprintf(ViSession vi, ViPBuf userstring, ViString writeFmt, ViVALi
                                                                 bufsiz = snprintf(0, 0, "%*f", (int)fwidth, dnum);
                                                 }
                                                 else bufsiz = snprintf(0, 0, "%f", dnum);
-                                                char buf[bufsiz];
-                                                snprintf(buf, bufsiz, "%f", dnum);
-                                                for(pnum = buf; *pnum; pnum++) {
+                                                auto buf = std::make_unique<char[]>(bufsiz);
+                                                snprintf(buf.get(), bufsiz, "%f", dnum);
+                                                for(pnum = buf.get(); *pnum; pnum++) {
                                                         ViStatus ret = buf_put(vi, userstring, *pnum);
                                                         if(ret != VI_SUCCESS)
                                                                 return ret;
